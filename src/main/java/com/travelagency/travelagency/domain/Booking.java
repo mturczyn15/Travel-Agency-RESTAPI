@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -31,6 +33,16 @@ public class Booking {
     @JoinColumn(name = "HOTEL_ID")
     private Hotel hotel;
 
+    @Column(name = "PRICE")
+    private BigDecimal price;
 
+    @Column(name = "START_DATE")
+    private LocalDate startDate;
 
+    @Column(name = "END_DATE")
+    private LocalDate endDate;
+
+    @Column(name = "PAYMENT")
+    @Enumerated(EnumType.STRING)
+    private PaymentType paymentType;
 }

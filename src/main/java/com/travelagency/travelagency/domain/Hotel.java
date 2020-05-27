@@ -26,6 +26,9 @@ public class Hotel {
     @Column(name = "CITY")
     private String city;
 
-    @Column(name = "ROOM")
-    private String room;
+    @Column(name = "STARS")
+    private int stars;
+
+    @Column(name = "PHONE_NUMBER")
+    private String phoneNumber;
 }

@@ -1,4 +1,4 @@
-package com.travelagency.travelagency;
+package com.travelagency.travelagency.controller;
 
 import com.travelagency.travelagency.domain.AddressDto;
 import com.travelagency.travelagency.service.AddressService;

@@ -24,14 +24,14 @@ public class AddressService {
     @Autowired
     private CustomerRepository customerRepository;
 
-    public AddressDto create(AddressDto addressDto) {
+    public AddressDto create(final AddressDto addressDto) {
         Customer customer = customerRepository.findById(addressDto.getCustomerId()).orElseThrow(() -> new EntityNotFoundException(Customer.class, addressDto.getCustomerId()));
         addressDto.setId(null);
         Address address = addressMapper.map(addressDto, customer);
         return addressMapper.mapToDto(addressRepository.save(address));
     }
 
-    public AddressDto update(AddressDto addressDto) {
+    public AddressDto update(final AddressDto addressDto) {
         addressRepository.findById(addressDto.getId()).orElseThrow(() -> new EntityNotFoundException(Address.class, addressDto.getId()));
         Customer customer = customerRepository.findById(addressDto.getCustomerId()).orElseThrow(() -> new EntityNotFoundException(Customer.class, addressDto.getCustomerId()));
         return addressMapper.mapToDto(addressRepository.save(addressMapper.map(addressDto, customer)));

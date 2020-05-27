@@ -22,8 +22,8 @@ public class Customer {
     @Column(name = "CUSTOMER_ID")
     private Long id;
 
-    @Column(name = "ADDRESS_ID")
-    private Long addressId;
+    @Column(name = "MAIN_ADDRESS_ID")
+    private Long mainAddressId;
 
     @Column(name = "FIRST_NAME")
     private String firstName;

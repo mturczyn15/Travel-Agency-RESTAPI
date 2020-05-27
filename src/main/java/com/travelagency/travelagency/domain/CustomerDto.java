@@ -11,12 +11,10 @@ import lombok.*;
 public class CustomerDto {
 
     private Long id;
-    private Long addressId;
+    private Long mainAddressId;
     private String firstName;
     private String lastName;
     private String login;
     private String password;
     private String email;
-
-
 }
