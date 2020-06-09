@@ -10,16 +10,19 @@ import java.util.Map;
         "id",
         "name",
         "city",
+        "stars",
         "phoneNumber"
 })
-public class TravelAgency {
+public class HotelDto {
 
     @JsonProperty("id")
     private Integer id;
     @JsonProperty("name")
-    private Object name;
+    private String name;
     @JsonProperty("city")
     private String city;
+    @JsonProperty("stars")
+    private Integer stars;
     @JsonProperty("phoneNumber")
     private String phoneNumber;
     @JsonIgnore
@@ -36,12 +39,12 @@ public class TravelAgency {
     }
 
     @JsonProperty("name")
-    public Object getName() {
+    public String getName() {
         return name;
     }
 
     @JsonProperty("name")
-    public void setName(Object name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -53,6 +56,16 @@ public class TravelAgency {
     @JsonProperty("city")
     public void setCity(String city) {
         this.city = city;
+    }
+
+    @JsonProperty("stars")
+    public Integer getStars() {
+        return stars;
+    }
+
+    @JsonProperty("stars")
+    public void setStars(Integer stars) {
+        this.stars = stars;
     }
 
     @JsonProperty("phoneNumber")

@@ -15,7 +15,7 @@ import java.util.Map;
         "password",
         "email"
 })
-public class Customer {
+public class CustomerDto {
 
     @JsonProperty("id")
     private Integer id;
@@ -114,5 +114,11 @@ public class Customer {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return  id + " " +
+                firstName + ' ' +
+                lastName + '\n';
+    }
 }
 
