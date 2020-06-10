@@ -8,29 +8,29 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "id",
-        "mainAddressId",
-        "firstName",
-        "lastName",
-        "login",
-        "password",
-        "email"
+        "customerId",
+        "street",
+        "houseNumber",
+        "city",
+        "zipCode",
+        "phoneNumber"
 })
 public class Address {
 
     @JsonProperty("id")
     private Integer id;
-    @JsonProperty("mainAddressId")
-    private Integer mainAddressId;
-    @JsonProperty("firstName")
-    private String firstName;
-    @JsonProperty("lastName")
-    private String lastName;
-    @JsonProperty("login")
-    private String login;
-    @JsonProperty("password")
-    private String password;
-    @JsonProperty("email")
-    private String email;
+    @JsonProperty("customerId")
+    private Integer customerId;
+    @JsonProperty("street")
+    private String street;
+    @JsonProperty("houseNumber")
+    private String houseNumber;
+    @JsonProperty("city")
+    private String city;
+    @JsonProperty("zipCode")
+    private String zipCode;
+    @JsonProperty("phoneNumber")
+    private String phoneNumber;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -44,64 +44,64 @@ public class Address {
         this.id = id;
     }
 
-    @JsonProperty("mainAddressId")
-    public Integer getMainAddressId() {
-        return mainAddressId;
+    @JsonProperty("customerId")
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    @JsonProperty("mainAddressId")
-    public void setMainAddressId(Integer mainAddressId) {
-        this.mainAddressId = mainAddressId;
+    @JsonProperty("customerId")
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
-    @JsonProperty("firstName")
-    public String getFirstName() {
-        return firstName;
+    @JsonProperty("street")
+    public String getStreet() {
+        return street;
     }
 
-    @JsonProperty("firstName")
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    @JsonProperty("street")
+    public void setStreet(String street) {
+        this.street = street;
     }
 
-    @JsonProperty("lastName")
-    public String getLastName() {
-        return lastName;
+    @JsonProperty("houseNumber")
+    public String getHouseNumber() {
+        return houseNumber;
     }
 
-    @JsonProperty("lastName")
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    @JsonProperty("houseNumber")
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
-    @JsonProperty("login")
-    public String getLogin() {
-        return login;
+    @JsonProperty("city")
+    public String getCity() {
+        return city;
     }
 
-    @JsonProperty("login")
-    public void setLogin(String login) {
-        this.login = login;
+    @JsonProperty("city")
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    @JsonProperty("password")
-    public String getPassword() {
-        return password;
+    @JsonProperty("zipCode")
+    public String getZipCode() {
+        return zipCode;
     }
 
-    @JsonProperty("password")
-    public void setPassword(String password) {
-        this.password = password;
+    @JsonProperty("zipCode")
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
-    @JsonProperty("email")
-    public String getEmail() {
-        return email;
+    @JsonProperty("phoneNumber")
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    @JsonProperty("email")
-    public void setEmail(String email) {
-        this.email = email;
+    @JsonProperty("phoneNumber")
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @JsonAnyGetter

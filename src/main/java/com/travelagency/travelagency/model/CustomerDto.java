@@ -8,27 +8,21 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "id",
-        "mainAddressId",
         "firstName",
         "lastName",
         "login",
-        "password",
         "email"
 })
 public class CustomerDto {
 
     @JsonProperty("id")
     private Integer id;
-    @JsonProperty("mainAddressId")
-    private Integer mainAddressId;
     @JsonProperty("firstName")
     private String firstName;
     @JsonProperty("lastName")
     private String lastName;
     @JsonProperty("login")
     private String login;
-    @JsonProperty("password")
-    private String password;
     @JsonProperty("email")
     private String email;
     @JsonIgnore
@@ -42,16 +36,6 @@ public class CustomerDto {
     @JsonProperty("id")
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @JsonProperty("mainAddressId")
-    public Integer getMainAddressId() {
-        return mainAddressId;
-    }
-
-    @JsonProperty("mainAddressId")
-    public void setMainAddressId(Integer mainAddressId) {
-        this.mainAddressId = mainAddressId;
     }
 
     @JsonProperty("firstName")
@@ -82,16 +66,6 @@ public class CustomerDto {
     @JsonProperty("login")
     public void setLogin(String login) {
         this.login = login;
-    }
-
-    @JsonProperty("password")
-    public String getPassword() {
-        return password;
-    }
-
-    @JsonProperty("password")
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     @JsonProperty("email")

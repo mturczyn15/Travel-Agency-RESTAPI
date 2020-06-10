@@ -16,11 +16,12 @@ public class CustomerClient {
 
     @Autowired
     private RestTemplate restTemplate;
+    private static final String URL = "http://localhost:8080/v1/customers";
 
     public CustomerDto[] getCustomers() {
 
         ResponseEntity<CustomerDto[]> response = restTemplate.exchange(
-                "http://localhost:8080/v1/customers",
+                URL,
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
                 CustomerDto[].class
@@ -40,8 +41,22 @@ public class CustomerClient {
     }
     private URI buildUri(String filterText) {
 
-        return UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/customers/firstname")
+        return UriComponentsBuilder.fromHttpUrl(URL + "/firstname")
                 .queryParam("name", filterText)
                 .build().encode().toUri();
+    }
+
+    public void createCustomer(CustomerDto customerDto) {
+        restTemplate.postForObject(URL, customerDto, CustomerDto.class);
+    }
+
+    public void updateCustomer(CustomerDto customerDto) {
+        restTemplate.put(URL, customerDto, CustomerDto.class);
+    }
+
+    public void deleteCustomer(CustomerDto customerDto) {
+        restTemplate.delete(
+                URL + "/{customerId}", customerDto.getId()
+        );
     }
 }
