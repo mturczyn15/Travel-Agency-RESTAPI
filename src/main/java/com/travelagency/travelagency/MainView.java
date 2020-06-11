@@ -106,6 +106,7 @@ public class MainView extends VerticalLayout {
 
         gridCustomers.addClassName("customer-grid");
         gridCustomers.setColumns("id", "firstName", "lastName", "email", "login");
+        gridCustomers.setHeightByRows(true);
         gridCustomers.asSingleSelect().addValueChangeListener(evt -> editContact(evt.getValue()));
         updateCustomersList();
     }
