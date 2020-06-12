@@ -16,7 +16,7 @@ import java.util.Map;
         "endDate",
         "paymentType"
 })
-public class Booking {
+public class BookingDto {
 
     @JsonProperty("id")
     private Integer id;

@@ -15,7 +15,7 @@ import java.util.Map;
         "zipCode",
         "phoneNumber"
 })
-public class Address {
+public class AddressDto {
 
     @JsonProperty("id")
     private Integer id;
