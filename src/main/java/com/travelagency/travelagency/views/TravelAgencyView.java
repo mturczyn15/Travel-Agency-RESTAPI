@@ -20,7 +20,7 @@ import java.util.List;
 @Route(value = "travelAgencies", layout = MainLayout.class)
 public class TravelAgencyView extends VerticalLayout {
 
-    H4 labelTravelAgency = new H4("TravelAgencies: \n");
+    H4 labelTravelAgency = new H4("Travel Agencies: \n");
     TextField filterText = new TextField();
     Grid<TravelAgencyDto> gridTravelAgencies = new Grid<>(TravelAgencyDto.class);
     private final TravelAgencyForm travelAgencyForm;
@@ -69,7 +69,7 @@ public class TravelAgencyView extends VerticalLayout {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
         filterText.addValueChangeListener(e -> updateTravelAgenciesList());
 
-        Button addTravelAgencyButton = new Button("Add travelAgency", click -> addTravelAgency());
+        Button addTravelAgencyButton = new Button("Add Travel Agency", click -> addTravelAgency());
         HorizontalLayout toolbar = new HorizontalLayout(filterText, addTravelAgencyButton);
         toolbar.addClassName("toolbar");
         return toolbar;

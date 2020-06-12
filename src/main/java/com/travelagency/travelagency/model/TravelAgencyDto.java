@@ -17,7 +17,7 @@ public class TravelAgencyDto {
     @JsonProperty("id")
     private Integer id;
     @JsonProperty("name")
-    private Object name;
+    private String name;
     @JsonProperty("city")
     private String city;
     @JsonProperty("phoneNumber")
@@ -36,12 +36,12 @@ public class TravelAgencyDto {
     }
 
     @JsonProperty("name")
-    public Object getName() {
+    public String getName() {
         return name;
     }
 
     @JsonProperty("name")
-    public void setName(Object name) {
+    public void setName(String name) {
         this.name = name;
     }
 

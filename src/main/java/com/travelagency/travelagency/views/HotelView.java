@@ -69,7 +69,7 @@ public class HotelView extends VerticalLayout {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
         filterText.addValueChangeListener(e -> updateHotelsList());
 
-        Button addHotelButton = new Button("Add hotel", click -> addHotel());
+        Button addHotelButton = new Button("Add Hotel", click -> addHotel());
         HorizontalLayout toolbar = new HorizontalLayout(filterText, addHotelButton);
         toolbar.addClassName("toolbar");
         return toolbar;

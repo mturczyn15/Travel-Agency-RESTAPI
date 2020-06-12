@@ -22,7 +22,7 @@ public class HotelDto {
     @JsonProperty("city")
     private String city;
     @JsonProperty("stars")
-    private Integer stars;
+    private Stars stars;
     @JsonProperty("phoneNumber")
     private String phoneNumber;
     @JsonIgnore
@@ -59,12 +59,12 @@ public class HotelDto {
     }
 
     @JsonProperty("stars")
-    public Integer getStars() {
+    public Stars getStars() {
         return stars;
     }
 
     @JsonProperty("stars")
-    public void setStars(Integer stars) {
+    public void setStars(Stars stars) {
         this.stars = stars;
     }
 

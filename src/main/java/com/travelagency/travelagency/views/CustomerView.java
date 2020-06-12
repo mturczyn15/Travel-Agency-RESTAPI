@@ -69,7 +69,7 @@ public class CustomerView extends VerticalLayout {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
         filterText.addValueChangeListener(e -> updateCustomersList());
 
-        Button addCustomerButton = new Button("Add customer", click -> addCustomer());
+        Button addCustomerButton = new Button("Add Customer", click -> addCustomer());
         HorizontalLayout toolbar = new HorizontalLayout(filterText, addCustomerButton);
         toolbar.addClassName("toolbar");
         return toolbar;

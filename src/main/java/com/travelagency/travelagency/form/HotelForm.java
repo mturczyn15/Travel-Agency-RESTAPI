@@ -1,12 +1,14 @@
 package com.travelagency.travelagency.form;
 
 import com.travelagency.travelagency.model.HotelDto;
+import com.travelagency.travelagency.model.Stars;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -14,11 +16,12 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.shared.Registration;
 
 
+
 public class HotelForm extends FormLayout {
 
     TextField name = new TextField("Name");
     TextField city = new TextField("City");
-    TextField stars = new TextField("Stars");
+    ComboBox<Stars> stars = new ComboBox<>("Stars");
     TextField phoneNumber = new TextField("Phone Number");
 
     Button save = new Button("Save");
@@ -31,7 +34,7 @@ public class HotelForm extends FormLayout {
 
     public HotelForm () {
         addClassName("hotel-form");
-        binder.bind(stars, obj -> obj.getStars() + "", null);
+        stars.setItems(Stars.values());
         binder.bindInstanceFields(this);
 
         add(name, city, stars, phoneNumber, createButtonsLayout());
