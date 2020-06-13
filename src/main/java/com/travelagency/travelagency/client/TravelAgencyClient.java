@@ -46,6 +46,18 @@ public class TravelAgencyClient {
                 .build().encode().toUri();
     }
 
+    public TravelAgencyDto getTravelAgency(Integer id) {
+
+        ResponseEntity<TravelAgencyDto> response = restTemplate.exchange(URL + "/{travelAgencyId}",
+                HttpMethod.GET,
+                HttpEntity.EMPTY,
+                TravelAgencyDto.class,
+                id
+
+        );
+        return response.getBody();
+    }
+
     public void createTravelAgency(TravelAgencyDto travelAgencyDto) {
         restTemplate.postForObject(URL, travelAgencyDto, TravelAgencyDto.class);
     }

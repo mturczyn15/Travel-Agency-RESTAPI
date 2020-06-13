@@ -32,7 +32,7 @@ public class TravelAgencyForm extends FormLayout {
         addClassName("travelAgency-form");
         binder.bindInstanceFields(this);
 
-        add(name, city, phoneNumber, createButtonsLayout());
+        add(createButtonsLayout(), name, city, phoneNumber);
     }
 
     public void setTravelAgencyDto(TravelAgencyDto travelAgencyDto) {

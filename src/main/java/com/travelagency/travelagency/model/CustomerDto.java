@@ -29,12 +29,12 @@ public class CustomerDto {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("id")
-    public Integer getId() {
+    public  Integer getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public  void setId(Integer id) {
         this.id = id;
     }
 
@@ -93,6 +93,14 @@ public class CustomerDto {
         return  id + " " +
                 firstName + ' ' +
                 lastName + '\n';
+    }
+
+    public static Integer getId(AddressDto addressDto) {
+        return addressDto.getId();
+    }
+
+    public static void setId(AddressDto addressDto, Integer integer) {
+        addressDto.setId(integer);
     }
 }
 

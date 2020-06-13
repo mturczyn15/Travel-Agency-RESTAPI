@@ -29,6 +29,18 @@ public class CustomerClient {
         return response.getBody();
     }
 
+    public CustomerDto getCustomer(Integer id) {
+
+        ResponseEntity<CustomerDto> response = restTemplate.exchange(URL + "/{customerId}",
+                HttpMethod.GET,
+                HttpEntity.EMPTY,
+                CustomerDto.class,
+                id
+
+        );
+        return response.getBody();
+    }
+
     public CustomerDto[] getCustomersByName(String name) {
 
         ResponseEntity<CustomerDto[]> response = restTemplate.exchange(

@@ -1,9 +1,6 @@
 package com.travelagency.travelagency;
 
-import com.travelagency.travelagency.views.CustomerView;
-import com.travelagency.travelagency.views.HotelView;
-import com.travelagency.travelagency.views.MainView;
-import com.travelagency.travelagency.views.TravelAgencyView;
+import com.travelagency.travelagency.views.*;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.H1;
@@ -35,7 +32,9 @@ public class MainLayout extends AppLayout {
         listLink.setHighlightCondition(HighlightConditions.sameLocation());
 
         addToDrawer(new VerticalLayout(listLink, new RouterLink("Customers", CustomerView.class)
-        , new RouterLink("Hotels", HotelView.class), new RouterLink("Travel Agencies", TravelAgencyView.class)
+                , new RouterLink("Addresses", AddressView.class)
+                , new RouterLink("Hotels", HotelView.class)
+                , new RouterLink("Travel Agencies", TravelAgencyView.class)
         ));
     }
 }

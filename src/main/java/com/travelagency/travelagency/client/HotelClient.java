@@ -29,6 +29,18 @@ public class HotelClient {
         return response.getBody();
     }
 
+    public HotelDto getHotel(Integer id) {
+
+        ResponseEntity<HotelDto> response = restTemplate.exchange(URL + "/{hotelId}",
+                HttpMethod.GET,
+                HttpEntity.EMPTY,
+                HotelDto.class,
+                id
+
+        );
+        return response.getBody();
+    }
+
     public HotelDto[] getHotelsByName(String name) {
 
         ResponseEntity<HotelDto[]> response = restTemplate.exchange(
