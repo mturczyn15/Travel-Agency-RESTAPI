@@ -1,11 +1,14 @@
 package com.travelagency.travelagency.model;
 
 import com.fasterxml.jackson.annotation.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-
+@AllArgsConstructor
+@NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "id",
@@ -37,6 +40,12 @@ public class BookingDto {
     private Payment paymentType;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    public BookingDto(String s, String s1) {
+        this.startDate = s;
+        this.endDate = s1;
+    }
+
 
     @JsonProperty("id")
     public Integer getId() {

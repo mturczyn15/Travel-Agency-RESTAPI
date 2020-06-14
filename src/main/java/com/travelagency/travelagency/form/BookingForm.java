@@ -73,10 +73,6 @@ public class BookingForm extends FormLayout {
                 .bind("startDate");
 
         binder.forField(endDate)
-                .withValidator(
-                endDate -> !endDate
-                        .isBefore(startDate.getValue()),
-                "Cannot return before departing")
                 .withConverter((this::convertLocalDateToDate), this::convertDateToLocalDate)
                 .bind("endDate");
 
@@ -105,6 +101,8 @@ public class BookingForm extends FormLayout {
         addClassName("booking-form");
 
         binder.bindInstanceFields(this);
+        startDate.setValue(LocalDate.now());
+        endDate.setValue(LocalDate.now().plusDays(1));
 
         add(paymentType, price, startDate, endDate, customerId, hotelId, travelAgencyId, createButtonsLayout());
     }
