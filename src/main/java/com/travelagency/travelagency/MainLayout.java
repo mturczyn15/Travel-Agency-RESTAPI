@@ -35,6 +35,7 @@ public class MainLayout extends AppLayout {
                 , new RouterLink("Addresses", AddressView.class)
                 , new RouterLink("Hotels", HotelView.class)
                 , new RouterLink("Travel Agencies", TravelAgencyView.class)
+                , new RouterLink("Bookings", BookingView.class)
         ));
     }
 }

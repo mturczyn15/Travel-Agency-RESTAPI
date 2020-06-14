@@ -90,6 +90,7 @@ public class CustomerDto {
 
     @Override
     public String toString() {
+        if (id == null) return "";
         return  id + " " +
                 firstName + ' ' +
                 lastName + '\n';

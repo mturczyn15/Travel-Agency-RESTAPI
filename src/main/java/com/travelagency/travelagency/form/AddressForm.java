@@ -17,6 +17,7 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.shared.Registration;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class AddressForm extends FormLayout {
@@ -42,7 +43,12 @@ public class AddressForm extends FormLayout {
         this.customerClient = customerClient;
 
         customerId.setItems(customers);
+        customerId.setPlaceholder("Choose customer..");
+        customerId.setClearButtonVisible(false);
         binder.forField(customerId).withConverter((this::extractID), v -> findCustomer(customerClient, v))
+                .withValidator(
+                        Objects::nonNull,
+                        "You must choose Customer")
                 .bind("customerId");
 
 

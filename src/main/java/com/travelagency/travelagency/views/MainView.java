@@ -3,7 +3,6 @@ package com.travelagency.travelagency.views;
 import com.travelagency.travelagency.MainLayout;
 import com.travelagency.travelagency.client.CitiesClient;
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -15,7 +14,6 @@ import java.util.List;
 
 @Route(value = "Intro", layout = MainLayout.class)
 @PageTitle("Travel Agency || Intro")
-@StyleSheet("/css/style.css")
 public class MainView extends VerticalLayout {
 
     H4 labelDescription = new H4("Site for travel office employers for booking travels. \n");

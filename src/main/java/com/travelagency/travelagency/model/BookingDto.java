@@ -2,6 +2,7 @@ package com.travelagency.travelagency.model;
 
 import com.fasterxml.jackson.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,13 +28,13 @@ public class BookingDto {
     @JsonProperty("hotelId")
     private Integer hotelId;
     @JsonProperty("price")
-    private Double price;
+    private BigDecimal price;
     @JsonProperty("startDate")
     private String startDate;
     @JsonProperty("endDate")
     private String endDate;
     @JsonProperty("paymentType")
-    private String paymentType;
+    private Payment paymentType;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -78,12 +79,12 @@ public class BookingDto {
     }
 
     @JsonProperty("price")
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
     @JsonProperty("price")
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -108,12 +109,12 @@ public class BookingDto {
     }
 
     @JsonProperty("paymentType")
-    public String getPaymentType() {
+    public Payment getPaymentType() {
         return paymentType;
     }
 
     @JsonProperty("paymentType")
-    public void setPaymentType(String paymentType) {
+    public void setPaymentType(Payment paymentType) {
         this.paymentType = paymentType;
     }
 

@@ -88,5 +88,13 @@ public class HotelDto {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        if (id == null) return "";
+        return  id + " " +
+                name + ' ' +
+                city + '\n';
+    }
+
 }
 

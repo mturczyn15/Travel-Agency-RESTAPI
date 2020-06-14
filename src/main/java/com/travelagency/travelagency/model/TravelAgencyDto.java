@@ -60,6 +60,14 @@ public class TravelAgencyDto {
         return phoneNumber;
     }
 
+    @Override
+    public String toString() {
+        if (id == null) return "";
+        return  id + " " +
+                name + ' ' +
+                city + '\n';
+    }
+
     @JsonProperty("phoneNumber")
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
