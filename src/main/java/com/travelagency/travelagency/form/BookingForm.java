@@ -58,6 +58,16 @@ public class BookingForm extends FormLayout {
         this.travelAgencyClient = travelAgencyClient;
 
         paymentType.setItems(Payment.values());
+        binder.forField(price)
+                .withValidator(
+                        Objects::nonNull,
+                        "You must insert price")
+                .bind("price");
+
+        binder.forField(paymentType).withValidator(
+                Objects::nonNull,
+                "You must choose Payment Type")
+                .bind("paymentType");
 
         binder.forField(startDate).withConverter((this::convertLocalDateToDate), this::convertDateToLocalDate)
                 .bind("startDate");
