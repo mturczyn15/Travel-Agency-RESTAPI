@@ -12,7 +12,7 @@ import com.vaadin.flow.router.Route;
 import java.util.Arrays;
 import java.util.List;
 
-@Route(value = "Intro", layout = MainLayout.class)
+@Route(value = "intro", layout = MainLayout.class)
 @PageTitle("Travel Agency || Intro")
 public class MainView extends VerticalLayout {
 

@@ -60,10 +60,8 @@ public class AddressForm extends FormLayout {
     }
 
     private CustomerDto findCustomer(CustomerClient customerClient, Integer id) {
-        // User selected blank, return blank
         if (id == null)
             return new CustomerDto();
-        // Change this to properly interface with your service
         return customerClient.getCustomer(id);
     }
 
